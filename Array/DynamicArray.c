@@ -90,14 +90,20 @@ void pushElement(DynamicArray* our_array,void* element)
     char* pointer_to_array=(char*)our_array->pointer;
     char* value_pointer=(char*)element;
 
-    for (size_t i = 0; i < our_array->element_size_bytes; i++)
-    {   
-        size_t index_to_put_element=(our_array->length*our_array->element_size_bytes)+i;
-        pointer_to_array[index_to_put_element]=value_pointer[i];
-    }
+    // for (size_t i = 0; i < our_array->element_size_bytes; i++)
+    // {   
+    //     size_t index_to_put_element=(our_array->length*our_array->element_size_bytes)+i;
+    //     pointer_to_array[index_to_put_element]=value_pointer[i];
+    // }
+    memcpy(our_array->pointer,value_pointer,our_array->element_size_bytes);
 
     our_array->length++;
 
+    
+}
+
+void pushPointer(DynamicArray* our_array,void** pointer_to_something)
+{
     
 }
 

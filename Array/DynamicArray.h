@@ -21,6 +21,7 @@ void clear(DynamicArray* our_array);
 
 void deleteFirst(DynamicArray* our_array);
 void pushElement(DynamicArray* our_array,void* element);
+void pushPointer(DynamicArray* our_array,void** pointer);
 void reduce_length(DynamicArray* our_array);
 void deleteAtMiddle(DynamicArray* our_array,size_t index);
-DynamicArray* createArray(size_t type_size)
+DynamicArray* createArray(size_t type_size);
